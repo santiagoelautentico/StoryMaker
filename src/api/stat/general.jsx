@@ -46,9 +46,7 @@ const General = () => {
     }
       getStories();
   }, []);
-console.log('stories', stories);
-console.log('loading', loading);
-if(stories && stories.length > 0) console.log('stories length', stories.length);
+
   return (
     <Segment className='secctionGeneral'>
       {/* FORMULARIO DE CUENTOS */}
@@ -63,7 +61,7 @@ if(stories && stories.length > 0) console.log('stories length', stories.length);
           <MenuList>
             {!loading && stories && stories.length > 0
               && stories.map((s,i) => (
-                <MenuItem key={s.id} id={s.id} selected={(s.title === story)} onClick={() => setStory(s.title)}>{s.title}</MenuItem>
+                <MenuItem style={{fontSize: 10}} selected={(s.title === story)} dense={(s.title === story)} key={s.id} id={s.id} selected={(s.title === story)} onClick={() => setStory(s.title)}>{s.title}</MenuItem>
               ))
             }
           </MenuList>
